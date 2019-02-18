@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="edu.neumont.kinsey.battleship.view.MyBattleshipView"
+	stylesheets="BattleshipView.css">
+	<top>
+		<MenuBar>
+			<Menu text="Game">
+				<MenuItem text="Restart" onAction="#onRestartAction" />
+				<MenuItem text="Save" onAction="#onSaveAction" />
+				<MenuItem text="Load" onAction="#onLoadAction" />
+				<MenuItem text="Exit" onAction="#onExitAction" />
+			</Menu>
+			<Menu text="Help">
+				<MenuItem text="About" onAction="#onAboutAction" />
+			</Menu>
+		</MenuBar>
+	</top>
+
+	<left>
+		<GridPane fx:id="boardGridPaneLeft" />
+	</left>
+
+	<center>
+		<HBox fx:id="playerBox">
+			<Label fx:id="playerLabel">Player 1's Name: </Label>
+			<TextField fx:id="playerText" />
+			<Button fx:id="playerButton" text="Submit"
+				onAction="#onPlayerClicked" />
+		</HBox>
+	</center>
+
+	<right>
+		<GridPane fx:id="boardGridPaneRight" />
+	</right>
+
+	<bottom>
+		<HBox>
+			<Label fx:id="playerName">Player 1</Label>
+			<Label>'s turn</Label>
+		</HBox>
+	</bottom>
+</BorderPane>
+
